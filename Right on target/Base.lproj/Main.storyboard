@@ -38,6 +38,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqy-mC-8vD">
+                                <rect key="frame" x="779" y="363" width="97" height="30"/>
+                                <state key="normal" title="О программе"/>
+                                <connections>
+                                    <action selector="showNextScren" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gnc-c1-qn5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -48,9 +55,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1XP-EM-Fsr" secondAttribute="trailing" constant="20" id="PML-5V-vH6"/>
                             <constraint firstItem="xBA-wE-yIP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VPp-dY-iVW"/>
                             <constraint firstItem="bio-fg-Hsw" firstAttribute="top" secondItem="1XP-EM-Fsr" secondAttribute="bottom" constant="30" id="XPZ-7X-XbA"/>
+                            <constraint firstItem="Pqy-mC-8vD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="fwp-Pl-ljV"/>
+                            <constraint firstAttribute="trailing" secondItem="Pqy-mC-8vD" secondAttribute="trailing" constant="20" id="heI-Jy-Svb"/>
                             <constraint firstItem="bio-fg-Hsw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="orv-c2-LJb"/>
+                            <constraint firstItem="Pqy-mC-8vD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qfQ-sC-xAg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eLl-az-lu8"/>
                     <connections>
                         <outlet property="label" destination="xBA-wE-yIP" id="i0u-DI-Zje"/>
                         <outlet property="slider" destination="1XP-EM-Fsr" id="Ye8-wL-kWt"/>
@@ -60,10 +71,43 @@
             </objects>
             <point key="canvasLocation" x="19.419642857142858" y="76.811594202898561"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="gow-lo-Hc9">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rfj-Sg-rWU" customClass="SecondViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ScK-zK-Cml">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfc-QX-Lsa">
+                                <rect key="frame" x="405" y="183" width="86" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Назад"/>
+                                <connections>
+                                    <action selector="hideCurrentScene" destination="Rfj-Sg-rWU" eventType="touchUpInside" id="J8z-9j-qPV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gbE-dd-XOE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sfc-QX-Lsa" firstAttribute="centerY" secondItem="ScK-zK-Cml" secondAttribute="centerY" id="LSE-bo-VRl"/>
+                            <constraint firstItem="Sfc-QX-Lsa" firstAttribute="centerX" secondItem="ScK-zK-Cml" secondAttribute="centerX" id="nuD-fb-bJ2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VYL-jm-ubw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIT-y6-CnP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="77"/>
+        </scene>
     </scenes>
     <resources>
         <image name="01.square.fill" catalog="system" width="128" height="114"/>
         <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
