@@ -9,16 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    @IBAction func showNextScren() {
-       
-        let storyboard = UIStoryboard(name:  "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
-        self.present(viewController, animated: true, completion: nil)
-    }
-    
-    
-    
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
     
@@ -41,6 +31,12 @@ class ViewController: UIViewController {
     var points: Int = 0
     
     
+//    @IBAction func showNextScren() {
+//
+//        let storyboard = UIStoryboard(name:  "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
+//        self.present(viewController, animated: true, completion: nil)
+//    }
     
     @IBAction func chekNumber () {
 
@@ -68,6 +64,17 @@ class ViewController: UIViewController {
             self.label.text = String(self.number)
         }
     
+    lazy var secondViewController: SecondViewController = getSecondViewController()
+    
+    private func getSecondViewController() -> SecondViewController {
+        let storyboard = UIStoryboard(name:  "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
+        return viewController as! SecondViewController
+    }
+    
+    @IBAction func showNextScreen() {
+        self.present(secondViewController, animated: true, completion: nil)
+    }
     
     
     override func viewDidLoad() {
