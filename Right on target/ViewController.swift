@@ -17,20 +17,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        let generator = Generator(startValue: 1, endValue: 50)!
+        game = Game(valueGenerator: generator, rounds: 5)
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
 
     
     @IBAction func chekNumber() {
-        game.calculateScore(with: Int(slider.value))
+        game.currentRound.calculateScore(with: Int(slider.value))
         if game.isGameEnded {
             showAlertWith(score: game.score)
             game.restartGame()
         } else {
             game.startNewRound()
         }
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     private func updateLabelWithSecretNumber(newText:String) {
         label.text = newText
